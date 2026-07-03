@@ -2,7 +2,7 @@ console.log(window.jspdf);
 history.pushState(null, null, location.href);
 
 window.onpopstate = function () {
-    window.location.href = "./bienvenida.html";
+    window.location.href = "/index.html";
 };
 
 window.onlo
@@ -58,7 +58,7 @@ document.getElementById("btnDescargar").addEventListener("click", async () => {
         generarTicket(ticket);
         localStorage.removeItem("ticket");
         setTimeout(() => {
-            window.location.href = "../HTML/bienvenida.html";
+            window.location.href = "/index.html";
         }, 500);
 
 
@@ -70,7 +70,7 @@ document.getElementById("btnFinalizar").addEventListener("click", () => {
     document.body.style.opacity = "0";
     localStorage.removeItem("ticket");
     setTimeout(() => {
-        window.location.href = "../HTML/bienvenida.html";
+        window.location.href = "/index.html";
     }, 500);
 });
 
