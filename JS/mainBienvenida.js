@@ -48,12 +48,12 @@ registerBtn.addEventListener("click",(ev)=>{
         const user={name:userName}
 
         localStorage.setItem(KEY_USER_LOCAL,JSON.stringify(user));
-        window.location.href = "productos.html";
+        window.location.href = "/html/productos.html";
 
     }
 });
 
 document.getElementById("btnAdmin").addEventListener("click",()=>{
-       window.location.href = CONFIG.API_URL + "/admin/login";
+       window.location.href = CONFIG.API_URL + "admin/login";
 })
 /*========================================*/
