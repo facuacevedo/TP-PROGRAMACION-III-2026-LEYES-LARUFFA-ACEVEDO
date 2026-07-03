@@ -1,6 +1,7 @@
 // config.js - variabes de entorno 
 const CONFIG = {
-    API_URL: "http://localhost:19120",
+    // url del backend
+    API_URL: "https://tp-programacion-iii-2026-leyes-laruffa.onrender.com/",
 
     ENDPOINTS: {
         PRODUCTOS: "/producto",
