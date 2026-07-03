@@ -54,6 +54,6 @@ registerBtn.addEventListener("click",(ev)=>{
 });
 
 document.getElementById("btnAdmin").addEventListener("click",()=>{
-       window.location.href = CONFIG.API_URL + "admin/login";
+       window.location.href = CONFIG.API_URL + "/admin/login";
 })
 /*========================================*/
