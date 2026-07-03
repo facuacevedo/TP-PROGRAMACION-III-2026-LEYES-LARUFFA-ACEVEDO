@@ -1,0 +1,208 @@
+@import url("/variables.css");
+/*=======ETIQUETAS GENERALES=======*/
+html{
+    height: 100%;
+    width: 100%;
+    
+}
+body{
+    background-color: var(--black-GRID-color);
+    font-family: 'Special Elite', monospace; /* O la fuente que elijas */
+  white-space: pre;                       /* Evita que el navegador colapse los espacios */
+  line-height: 1.1;
+    overflow: hidden;  /* ← agregar esto */
+    height: 100%;
+    
+}
+/*==================================*/
+:root{
+    --white-GRID-color: #f5f5f5;
+    --black-GRID-color: #0f1116;
+    --green-GRID-color: #8ac4a2;
+}
+/*======ETIQUETAS PRINCIPALES======*/
+main {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    justify-content: center;
+            /* ← esto centra verticalmente en cada fila */
+    height: 100vh;
+    overflow: hidden;
+}
+
+.ascii-title{
+    grid-row: 1;
+    color: var(--white-GRID-color);
+    font-size: small;
+    font-size: 21px;
+}
+
+.left-pattern{
+    
+    color: var(--white-GRID-color);
+    position: fixed;
+    left: 50px;
+    top: 0;             
+    margin: 0px;
+    overflow: hidden; 
+    pointer-events: none;
+   
+    
+
+}
+
+.right-pattern{
+    color: var(--white-GRID-color);
+    position: fixed;
+    right: 50px;
+    top:0px;
+    margin: 0px;
+    pointer-events: none;
+    overflow: hidden; 
+    
+    
+
+}
+
+.user-form{
+    margin-top: 0;
+      margin-bottom: 250px;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
+    
+}
+
+#user-input{
+     width: 350px;
+    height: 45px;
+
+    background-color: var(--black-GRID-color);
+
+    border: 2px solid var(--white-GRID-color);
+
+    color: var(--white-GRID-color);
+
+    font-size: 20px;
+
+    padding-left: 12px;
+}
+
+.button-enter{
+      background-color: var(--black-GRID-color);
+    color: var(--white-GRID-color);
+
+    font-weight: 900;
+
+    width: 370px;
+    height: 50px;
+
+    border: 2px solid var(--white-GRID-color);
+
+    transition: 0.3s;
+    
+}
+.button-enter:hover{
+    background-color: white;
+    color: black;
+}
+
+.button-enter:active{
+    transform: translateY(3px) scale(0.97);
+}
+#user-input:focus{
+    
+    color: var(--green-GRID-color);
+    font-weight: 700;
+    border-color: var(--white-GRID-color)
+    
+}
+
+#user-input:hover{
+     background-color: var(--white-GRID-color);
+    color: var(--black-GRID-color);
+
+    transition: 0.3s;
+}
+
+label{
+    font-weight: 700;
+    color: var(--white-GRID-color);
+    font-size: 19px;
+    position: relative;
+    left: 6px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.error{
+  outline: none;
+  color: red;
+  background-color: var(--black-GRID-color);
+}
+
+
+
+.grid-footer{
+   
+
+    display: flex;
+
+    justify-content: center;
+
+     position: absolute;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    margin: 0;;
+
+    color: var(--green-GRID-color);
+
+    font-family: monospace;
+
+    letter-spacing: 2px;
+
+    opacity: 0.7;
+}
+.grid-footer p{
+    border-top: 1px solid var(--green-GRID-color);
+    padding-top: 10px;
+}
+
+#btnAdmin {
+    background-color: var(--black-GRID-color);
+    color: var(--green-GRID-color);
+    font-weight: 900;
+    width: 370px;
+    height: 50px;
+    border: 2px solid var(--green-GRID-color);
+    font-family: monospace;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btnAdmin:hover {
+    background-color: var(--green-GRID-color);
+    color: black;
+    box-shadow: 0 0 5px #00ff88, 0 0 15px #00ff88;
+}
+
+#btnAdmin:active {
+    transform: translateY(3px) scale(0.97);
+}
+
+/*==================================*/
+
+
+
+

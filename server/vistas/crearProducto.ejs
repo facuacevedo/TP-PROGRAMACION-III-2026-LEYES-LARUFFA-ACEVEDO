@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alta Producto - G.R.I.D</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>G.R.I.D - Panel de Administración</h1>
+        <p>Leyes - Acevedo - Laruffa</p>
+        <nav>
+            <a href="/admin/dashboard">Dashboard</a>
+            <a href="/admin/producto/nuevo" id="btnAgregar">Agregar Producto</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Nombre del producto">
+        </div>
+
+        <div class="campo">
+            <label for="descripcion">Descripcion</label>
+            <textarea id="descripcion" placeholder="Descripcion del producto"></textarea>
+        </div>
+
+        <div class="campo">
+            <label for="precio">Precio</label>
+            <input type="number" id="precio" placeholder="Precio del producto">
+        </div>
+
+
+        <div class="campo">
+            <label for="stock">Stock</label>
+            <input type="number" id="stock" placeholder="Stock del producto">
+        </div>
+
+        <div class="campo">
+            <label for="tipo">Tipo</label>
+            <select id="tipo">
+                <option value="programa">Programa</option>
+                <option value="libreria">Librería</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <input type="file" id="imagen" />
+        </div>
+
+
+        <button onclick="crearProducto()">Agregar Producto</button>
+    </main>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const btnAgregar = document.getElementById("btnAgregar");
+        btnAgregar.classList.add("selected-btn");
+        async function crearProducto() {
+            const formData = new FormData();
+            formData.append("nombre", document.getElementById("nombre").value);
+            formData.append("descripcion", document.getElementById("descripcion").value);
+            formData.append("precio", document.getElementById("precio").value);
+            formData.append("stock", document.getElementById("stock").value);
+            formData.append("tipo", document.getElementById("tipo").value);
+            formData.append("imagenProducto", document.getElementById("imagen").files[0]);
+
+            const respuesta = await fetch("/producto", {
+                method: "POST",
+                body: formData,
+
+            })
+
+            if (respuesta.ok) {
+                window.location.href = "/admin/dashboard";
+            } else {
+                
+                const error = await respuesta.json();
+                const mensajes = error.errores.map(e => e.message).join("<br>");
+               Swal.fire({
+                icon: "error",
+                title: "ERROR",
+                html: mensajes,
+                confirmButtonText: "ACEPTAR",
+                customClass: {
+                    popup: 'swal-popup',
+                    title: 'swal-title',
+                    htmlContainer: 'swal-text',
+                    confirmButton: 'swal-button'
+                }
+            });
+            }
+        }
+
+    </script>
+</body>

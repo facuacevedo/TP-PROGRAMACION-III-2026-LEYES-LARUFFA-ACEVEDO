@@ -1,0 +1,26 @@
+:root{
+    --white-GRID-color: #f5f5f5;
+    --black-GRID-color: #0f1116;
+    --green-GRID-color: #8ac4a2;
+    --active-green-GRID-color: #5aef6a;
+}
+
+
+/* Tema claro */
+[data-theme="claro"] {
+    --bg-color: #f5f5f5;
+    --text-color: #0f1116;
+    --accent-color: #008844;
+    --card-bg: #ffffff;
+    --border-color: #008844;
+}
+
+
+
+[data-theme="oscuro"] {
+    --bg-color: #0f1116;
+    --text-color: #f5f5f5;
+    --accent-color: #8ac4a2;
+    --card-bg: #111;
+    --border-color: #ffffff;
+}
