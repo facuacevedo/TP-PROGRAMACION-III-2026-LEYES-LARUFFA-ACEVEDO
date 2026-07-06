@@ -66,6 +66,8 @@ async function mostrarProductosFiltrados( cantidadesLocalStorage ){
     btnCancelarCompra.addEventListener( "click", () => modalCompra.close() );
     btnConfirmarCompra.addEventListener( "click", async () => { 
         console.log(usuario,"USUARIO------------------------")
+        const cantidades = JSON.parse(  localStorage.getItem("carritoDeProductos") ) || {};
+        const productosCompra= await cargarDatos(cantidades);
         const productosParaEnviar=productosCompra.map(p=>({
             id:p.id,
             cantidad:p.cantidad,
